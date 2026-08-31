@@ -1,46 +1,15 @@
-headersOrigin = "config"
-plugins = []
-
-[functions]
-
-  [functions."*"]
-
 [build]
-publish = "/opt/data/bl-analytics-deploy"
-publishOrigin = "config"
-commandOrigin = "config"
-command = "echo 'Static site - no build needed'"
-
-  [build.environment]
-
-  [build.processing]
-
-    [build.processing.css]
-
-    [build.processing.html]
-
-    [build.processing.images]
-
-    [build.processing.js]
-
-  [build.services]
-
-[[headers]]
-for = "/*"
-
-  [headers.values]
-  X-Frame-Options = "DENY"
-  X-Content-Type-Options = "nosniff"
-  Referrer-Policy = "strict-origin-when-cross-origin"
+  command = "echo 'Static site - no build needed'"
+  publish = "."
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
-force = false
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
